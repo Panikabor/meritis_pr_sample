@@ -1,0 +1,17 @@
+[
+  {
+    "firstName": "Harry",
+    "lastName": "Potter",
+    "email": "harry.potter@hogwarts.co.uk"
+  },
+  {
+    "firstName": "Indiana",
+    "lastName": "Jones",
+    "email": "indiana.jones@hunter.cuny.edu"
+  },
+  {
+    "firstName": "Marty",
+    "lastName": "McFly",
+    "email": "marty.mcfly@bttf.com"
+  }
+]

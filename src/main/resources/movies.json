@@ -1,0 +1,48 @@
+[
+  {
+    "title": "Star wars episode 4, A new hope",
+    "authors": [
+      "George Lucas"
+    ],
+    "actors": [
+      "Mark Hamill",
+      "Harrison Ford",
+      "Carrie Fisher"
+    ],
+    "duration": "PT2H58M",
+    "types": [
+      "SCIENCE_FICTION"
+    ]
+  },
+  {
+    "title": "The Godfather",
+    "authors": [
+      "Francis Ford Coppola"
+    ],
+    "actors": [
+      "Marlon Brando",
+      "Al Pacino",
+      "James Caan"
+    ],
+    "duration": "PT2H55M",
+    "types": [
+      "CRIME"
+    ]
+  },
+  {
+    "title": "The lord of the ring, the fellowship of the ring",
+    "authors": [
+      "Peter Jackson"
+    ],
+    "actors": [
+      "Andy Serkis",
+      "Orlando Bloom",
+      "Viggo Mortensen"
+    ],
+    "duration": "PT2H58M",
+    "types": [
+      "ADVENTURE",
+      "FANTASY"
+    ]
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Harry potter and the philosopher's stone",
+    "authors": [
+      "J.K Rowling"
+    ],
+    "pageNumber": 223,
+    "types": [
+      "FANTASY"
+    ]
+  },
+  {
+    "title": "1984",
+    "authors": [
+      "George Orwell"
+    ],
+    "pageNumber": 376,
+    "types": [
+      "SCIENCE_FICTION"
+    ]
+  },
+  {
+    "title": "Les Misérables",
+    "authors": [
+      "Victor Hugo"
+    ],
+    "pageNumber": 2598,
+    "types": [
+      "LITERARY"
+    ]
+  }
+]

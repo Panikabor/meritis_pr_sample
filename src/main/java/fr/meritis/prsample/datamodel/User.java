@@ -5,10 +5,10 @@ import java.util.*;
 
 public class User {
     private final String id;
+    private final List<Document> borrowed = new ArrayList<>();
     private String firstName;
     private String lastName;
     private String email;
-    private final List<Document> borrowed = new ArrayList<>();
 
     public User() {
         this.id = UUID.randomUUID().toString();
@@ -28,6 +28,11 @@ public class User {
 
     public String getLastName() {
         return lastName;
+    }
+
+
+    public String getFullName() {
+        return getFirstName() + " " + getLastName();
     }
 
     public void setLastName(String lastName) {
@@ -62,15 +67,18 @@ public class User {
     }
 
     public void borrowDocument(Document document) {
-        System.out.println("Borrowing document: " + document.getTitle() + " by user: " + getFirstName() + " " + getLastName());
         document.setBorrowedBy(this);
         borrowed.add(document);
+        IO.println(document.getTitle() + " was borrowed by user: " + getFullName());
     }
 
     public void returnDocument(Document document) {
-        System.out.println("Returning document: " + document.getTitle());
+        if (!borrowed.contains(document)) {
+            throw new IllegalArgumentException(document + " was not borrowed by " + this);
+        }
         document.giveBack();
         borrowed.remove(document);
+        IO.println(document.getTitle() + " returned by " + getFullName());
     }
 
     public List<Document> getBorrowed() {

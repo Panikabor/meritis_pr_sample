@@ -57,7 +57,7 @@ public class Movie extends Document {
 
     @Override
     public String toString() {
-        return "Book{" + "id='" + getId() + '\'' + ", title='" + getTitle() + '\'' + ", authors=" + getAuthors() + "," +
+        return "Movie{" + "id='" + getId() + '\'' + ", title='" + getTitle() + '\'' + ", authors=" + getAuthors() + "," +
                 " pageNumber=" + actors + ", duration=" + duration + ", types=" + types + '}';
     }
 }

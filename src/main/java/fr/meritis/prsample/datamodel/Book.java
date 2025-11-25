@@ -28,6 +28,9 @@ public class Book extends Document {
     }
 
     public void addType(BookType type) {
+        if (this.types == null) {
+            this.types = new java.util.ArrayList<>();
+        }
         this.types.add(type);
     }
 

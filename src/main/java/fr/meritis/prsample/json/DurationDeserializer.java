@@ -22,6 +22,5 @@ public class DurationDeserializer extends StdDeserializer<Duration> {
     public Duration deserialize(JsonParser jp, DeserializationContext ctxt) throws IOException {
         JsonNode node = jp.getCodec().readTree(jp);
         return Duration.parse(node.asText());
-
     }
 }

@@ -36,11 +36,13 @@ public class MediaLibrary {
         books.forEach((movie) -> documentsById.put(movie.getId(), movie));
     }
 
-    static void main() throws IOException {
+    public static void main(String[] args) throws IOException {
         System.out.println("Welcome to media library");
         MediaLibrary ml = new MediaLibrary();
         firstUserBorrowsFirstMovie(ml);
-        indyBorrowsPotter(ml);
+        User indy = indyBorrowsPotter(ml);
+        printBorrowed(ml);
+        indy.returnDocument(indy.getBorrowed().get(0));
         printBorrowed(ml);
     }
 
@@ -52,16 +54,17 @@ public class MediaLibrary {
         firstUser.borrowDocument(firstMovie);
     }
 
-    private static void indyBorrowsPotter(MediaLibrary ml) {
+    private static User indyBorrowsPotter(MediaLibrary ml) {
         User indy = ml.findUser("indiana.jones@hunter.cuny.edu").orElseThrow();
         List<Document> potterDocs = ml.findDocuments("Potter");
         Document firstPotterDoc = potterDocs.getFirst();
         indy.borrowDocument(firstPotterDoc);
+        return indy;
     }
 
     private static void printBorrowed(MediaLibrary ml) {
         ml.documentsById.values().stream().filter(document -> document.getBorrowedBy() != null)
-                .forEach(document -> System.out.println(document + " has been borrowed by " + document.getBorrowedBy() + " and should be returned by " + document.getExpectedReturn()));
+                .forEach(document -> System.out.println(document + " has been borrowed by " + document.getBorrowedBy() + " and should be returned on " + document.getExpectedReturn()));
     }
 
     private Optional<User> findUser(final String email) {

@@ -62,13 +62,15 @@ public class User {
     }
 
     public void borrowDocument(Document document) {
+        System.out.println("Borrowing document: " + document.getTitle() + " by user: " + getFirstName() + " " + getLastName());
         document.setBorrowedBy(this);
         borrowed.add(document);
     }
 
     public void returnDocument(Document document) {
+        System.out.println("Returning document: " + document.getTitle());
         document.giveBack();
-        borrowed.add(document);
+        borrowed.remove(document);
     }
 
     public List<Document> getBorrowed() {
